@@ -1,0 +1,6 @@
+flask
+python-dotenv
+requests
+# 其他需要的依赖包
+flask==2.0.1
+dashscope>=1.22.1

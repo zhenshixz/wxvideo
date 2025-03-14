@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xz万相视频生成</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <div class="left-panel">
+            <h2>视频生成</h2>
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="prompt">提示词</label>
+                    <textarea id="prompt" placeholder="请输入视频生成提示词..."></textarea>
+                </div>
+                <div class="button-group">
+                    <button id="generateBtn" onclick="generateVideo()">
+                        <span class="btn-text">生成视频</span>
+                    </button>
+                    <button id="stopBtn" onclick="stopGeneration()" disabled>
+                        <span class="btn-text">停止生成</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="center-panel">
+            <div class="video-section">
+                <div id="loading" class="loading">
+                    <div class="loading-spinner"></div>
+                    <span>正在生成视频，请稍候...</span>
+                </div>
+                <div id="error" class="error"></div>
+                <div id="videoContainer" class="video-container">
+                    <video id="videoPlayer" controls>
+                        您的浏览器不支持视频播放。
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <h2>历史记录</h2>
+            <div class="history-list" id="historyList">
+                <!-- 历史记录将通过JavaScript动态添加 -->
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
